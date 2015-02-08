@@ -27,22 +27,25 @@ class Login extends CI_Controller {
                       $this->session->set_userdata('id_user', $rows->use_id);
 					  $this->session->set_userdata('user_name', $rows->username);
                       $id = $rows->use_id;
-                      if ($rows->rol_id === '1') {
+                      if ($rows->rol_id == '2') {
                         $this->session->set_userdata('admin', $id);
                         redirect('admin/records');
-                      } elseif ($rows->rol_id === '2') {
+                      } elseif ($rows->rol_id == '1') {
+                         
                         //echo $rows->role_alias;
-                          $this->session->set_userdata('use_id', $rows->use_id);
+//                          $this->session->set_userdata('use_id', $rows->use_id);
                           redirect('hr/records');
-//                          $this->load->view('layout.php',$data);
-                      } elseif ($rows->rol_id === '3') {
+                          //redirect('admin/records');
+                          //$this->load->view('hr/records',$data);
+//                        $this->load->view('layout.php',$data);
+                      } elseif ($rows->rol_id == '3') {
                           $this->session->set_userdata('manager', $id);
 							redirect('manager/records');
                           // $this->load->view('layout.php',$data);
                       }
                     }
                   } else {
-                          $this->session->set_userdata('login_erro', 'Not matc user and password!');
+                          $this->session->set_userdata('login_erro', 'Not match user and password!');
                           $this->load->view('include/login/login_form');
                   }
                 }

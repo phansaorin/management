@@ -11,7 +11,7 @@ class Hr extends CI_Controller {
         //if ($this->check_session()) {
         if ($this->session->userdata('hr')) {
             $data['title'] = "Hr management";
-            $session_id = $this->session->userdata('hr');
+//            $session_id = $this->session->userdata('hr');
             $data['get_staff'] = $this->mod_staff->getStaff();
             // $data['total'] = $this->mod_staff->total($session_id);
             //$this->view_main($data);
