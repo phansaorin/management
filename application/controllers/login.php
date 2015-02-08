@@ -31,7 +31,7 @@ class Login extends CI_Controller {
                         redirect('admin/records');
                       } elseif ($rows->rol_id === '2') {
                         //echo $rows->role_alias;
-                          $this->session->set_userdata('hr', $id);
+                          $this->session->set_userdata('use_id', $rows->use_id);
                           redirect('hr/records');
 //                          $this->load->view('layout.php',$data);
                       } elseif ($rows->rol_id === '3') {

@@ -37,7 +37,10 @@
                                             <td>'.$row->family_name.'</td>
                                             <td>'.$row->phone.'</td>
                                             <td class="center">'.$row->address.'</td>
-                                            <td class="center">Delect</td>
+                                            <td class="center">';
+                                             echo anchor(base_url() . 'hr/deleteStaff/' . $row->sta_id . '.html', '<img src=' . base_url() . 'assets/images/delete.png />', 'title="Delete" onclick="return confirm(Are you sure want to delete?)"');
+													
+                                            echo'</td>
                                         </tr>';
                                         }
                                         ?>

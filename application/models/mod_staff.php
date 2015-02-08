@@ -29,13 +29,28 @@ class Mod_staff extends CI_Model {
             'photo' => $filename,
             'related_file' => $document,
             'work_start' => $this->input->post("txt_swd"),
-            'use_id'=>3,
+            'use_id'=> $this->session->userdata('use_id'),
             'created_date'=>'08-02-14',
             'sal_id'=>1
         );
 //        $this->db->trans_start();
         $this->db->insert("tbl_staffs", $data);
     }
-
+  function deleteStaff($id) {
+        try {
+            $this->db->trans_start(TRUE);
+            $this->db->where('sta_id', $id);
+            $update = $this->db->delete('tbl_staffs');
+            if ($update) {
+                $this->db->trans_complete();
+                return TRUE;
+            } else {
+                $this->db->trans_rollback();
+                return FALSE;
+            }
+        } catch (Exception $e) {
+            die($e->getMessage());
+        }
+    }
 }
 

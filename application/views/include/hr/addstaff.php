@@ -9,6 +9,7 @@ $document = array('name' => 'document', 'value' => set_value('document'));
 $formclass = array('class' => 'form-horizontal');
 //    echo form_open("hr/addstaff")
 echo form_open_multipart('hr/addstaff', $formclass);
+
 ?>
     <tr>
         <td class="txt_label">Family Name  </td>
@@ -18,7 +19,7 @@ echo form_open_multipart('hr/addstaff', $formclass);
         </td>
         <td class="txt_label">Given Name </td>
          <td>:</td>
-        <td><input type="text" name="txt_gname" value="<?php echo set_value('txt_gname');?>" class="box"/></td>
+        <td><input type="text" name="txt_gname" value="<?php echo set_value('txt_gname');?>" class="box" required/></td>
     </tr>
     <tr>
         <td class="txt_label">Gender </td>
