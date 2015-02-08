@@ -29,7 +29,7 @@ class Mod_staff extends CI_Model {
             'photo' => $filename,
             'related_file' => $document,
             'work_start' => $this->input->post("txt_swd"),
-            'use_id'=>2,
+            'use_id'=>3,
             'created_date'=>'08-02-14',
             'sal_id'=>1
         );
