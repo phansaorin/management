@@ -50,8 +50,21 @@
                 <div class="login-panel panel panel-default">                  
                     <div class="panel-heading">
                         <h3 class="panel-title">Please Sign In</h3>
-
-
+					<?php 
+					session_start();  
+					if(isset($_POST['btnSubmit'])){ 
+					
+						$sms =  $this->session->userdata('login_erro');
+						
+						
+						?>
+						<div class="alert">
+							<button type="button" class="close" data-dismiss="alert">&times;</button>
+							<strong>Warning!</strong> <?php echo $sms;?>
+						</div>
+					<?php }else{
+						echo '';
+					} ?>
                     </div>
                     <div class="panel-body">
                        <?php echo form_open("login/login_form", array("role"=>"form")); ?>

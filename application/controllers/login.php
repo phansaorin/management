@@ -13,7 +13,7 @@ class Login extends CI_Controller {
               $this->form_validation->set_rules('password','Password','required|trim|max_length[50]|xss_clean');
 
               if($this->form_validation->run() == FALSE){
-                echo "error";
+                //echo "This is error";
                 $this->load->view('include/login/login_form');
               }else{
                 $username = $this->input->post('username');
@@ -25,6 +25,7 @@ class Login extends CI_Controller {
                   if ($data['login']->num_rows() > 0) {
                     foreach ($data['login']->result() as $rows) {
                       $this->session->set_userdata('id_user', $rows->use_id);
+					  $this->session->set_userdata('user_name', $rows->username);
                       $id = $rows->use_id;
                       if ($rows->rol_id === '1') {
                         $this->session->set_userdata('admin', $id);
@@ -36,13 +37,13 @@ class Login extends CI_Controller {
 //                          $this->load->view('layout.php',$data);
                       } elseif ($rows->rol_id === '3') {
                           $this->session->set_userdata('manager', $id);
-                         // redirect('manager/records');
-                           $this->load->view('layout.php',$data);
+							redirect('manager/records');
+                          // $this->load->view('layout.php',$data);
                       }
                     }
                   } else {
-                          $this->session->set_userdata('login_erro', show_message('Your username or password is not match!', 'error'));
-                          redirect('login/');
+                          $this->session->set_userdata('login_erro', 'Not matc user and password!');
+                          $this->load->view('include/login/login_form');
                   }
                 }
               }
