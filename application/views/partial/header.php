@@ -1,3 +1,4 @@
+ <?php session_start();?>
  <nav class="navbar navbar-default navbar-fixed-top" role="navigation" id="navbar">
             <!-- navbar-header -->
             <div class="navbar-header">
@@ -80,7 +81,8 @@
                         <li><a href="#"><i class="fa fa-gear fa-fw"></i>Settings</a>
                         </li>
                         <li class="divider"></li>
-                        <li><a href="login.html"><i class="fa fa-sign-out fa-fw"></i>Logout</a>
+						<li class="session"><?php echo $this->session->userdata('user_name');?></li>
+                        <li><a href="<?php echo $this->session->sess_destroy();?>"><i class="fa fa-sign-out fa-fw"></i>Logout</a>
                         </li>
                     </ul>
                     <!-- end dropdown-user -->
