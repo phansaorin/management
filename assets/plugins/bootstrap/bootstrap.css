@@ -5,6 +5,17 @@
  */
 
 /*! normalize.css v3.0.0 | MIT License | git.io/normalize */
+h3{padding-top: 22px;color: #017C62;}
+h3#new_gro {padding-top: 22px;color: #017C62;}
+div#tbl_atte {margin-top: 0;}
+input#save_atte {margin-left: 0 !important;}
+input.btn.btn-primary {} 
+/*margin-left: -35px;*/
+legend{padding-bottom: 9px !important;}
+h3#add_newuser ,h3#add_salary, h3#new_sta{padding-top: 22px;color: #017C62;}
+span#slas {color: #0088CC;padding-left: 7px;}
+h1.page-header{font-size: 22px;margin-top: 26px;color: #017C62;}
+.checkbox label{color: #9B9A9A;}
 html {
   font-family: sans-serif;
   -webkit-text-size-adjust: 100%;
@@ -565,7 +576,7 @@ a.bg-danger:hover {
 .page-header {
   padding-bottom: 9px;
   margin: 40px 0 20px;
-  border-bottom: 1px solid #eee;
+  /*border-bottom: 1px solid #eee;*/
 }
 ul,
 ol {
@@ -4777,7 +4788,7 @@ a.list-group-item-danger.active:focus {
   margin-top: 0;
   margin-bottom: 0;
   font-size: 16px;
-  color: inherit;
+  color: #73B88F !important;
 }
 .panel-title > a {
   color: inherit;
@@ -4952,6 +4963,7 @@ a.list-group-item-danger.active:focus {
 }
 .panel-default {
   border-color: #ddd;
+  margin-top: -24px;
 }
 .panel-default > .panel-heading {
   color: #333;

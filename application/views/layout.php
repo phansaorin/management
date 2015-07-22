@@ -45,7 +45,7 @@
             <?php
 $this->load->view('partial/header');
 
-$this->load->view('partial/nav_right_hr');
+$this->load->view('partial/nav_right');
 
 ?>
         
@@ -78,5 +78,9 @@ $this->load->view('partial/nav_right_hr');
 </div>
     </div>
     </body>
-
+<script type="text/javascript"> 
+function confirmDelete() { 
+ return confirm("Are you sure want to delete?");   
+} 
+</script>
     </html>
